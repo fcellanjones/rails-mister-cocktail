@@ -1,8 +1,14 @@
-<h1>Create your Dose!</h1>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Submit my dose", class: "btn btn-primary" %>
-<% end %>
-<br>
-<%= link_to 'Back', root_path %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h1>Enter your measure</h1>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description %>
+          <%= f.association :ingredient %>
+          <%= f.submit "Submit my measure", class: "btn btn-warning" %>
+            <% end %>
+      <br>
+      <%= link_to 'Back', root_path, class: "btn btn-sm btn-outline-warning"%>
+    </div>
+  </div>
+</div>

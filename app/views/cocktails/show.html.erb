@@ -1,19 +1,24 @@
 <div style="background-color: #fcf1f1">
-  <div><h1 class='text-center'><%= @cocktail.name %></h1></div>
+  <div class = "container">
+  <h1 class='text-center'><%= @cocktail.name %></h1>
 
-  <div>
-    <ul>
+  <div class="container">
       <% @cocktail.doses.each do |dose|%>
-      <li style="list-style-type: none"><%= dose.description %>: <%= dose.ingredient.name %> </li>
-      <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning" %>
+    <div class="card-product">
+      <img src="https://images.unsplash.com/photo-1542848802-92864b33761c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80" alt="picture of a yummy cocktail">
+        <div class="card-product-infos">
+          <h2><%= dose.description %>: <%= dose.ingredient.name %> </h2>
+          <%= link_to 'Delete', dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-warning btn-sm" %>
+        </div>
+      </div>
       <% end %>
-    </ul>
-</div>
+  </div>
 
 <br>
 
-  <div>
-    <%= link_to 'Back', root_path, class: "btn btn-warning" %> | <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail),  class: "btn btn-warning" %>
+    <div>
+      <%= link_to 'Back', root_path, class: "btn btn-outline-warning" %> | <%= link_to 'Add a measure', new_cocktail_dose_path(@cocktail),  class: "btn btn-outline-warning" %>
   </div>
-
 </div>
+</div>
+

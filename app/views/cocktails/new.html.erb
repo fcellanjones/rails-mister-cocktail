@@ -1,10 +1,15 @@
-<h1>Submit a cocktail!</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <h4>Submit a cocktail!</h4>
+      <%= simple_form_for @cocktail do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Submit cocktail", class: "btn btn-warning" %>
+        <% end %>
 
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit "Submit cocktail", class: "btn btn-primary" %>
-<% end %>
+  <br>
 
-<br>
-
-<%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path, class: "btn btn-sm btn-outline-warning"%>
+    </div>
+  </div>
+</div>
